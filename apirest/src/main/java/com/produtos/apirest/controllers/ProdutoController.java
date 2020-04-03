@@ -22,8 +22,20 @@ public class ProdutoController {
     public Produto index(@PathVariable(value="id") long id){
         return produtosRepository.findById(id);
     }
+
     @PostMapping("/produto")
     public Produto create(@RequestBody Produto produto){
+        return produtosRepository.save(produto);
+    }
+
+    @DeleteMapping("/produto/{id}")
+    public void delete(@PathVariable(value="id") long id){
+        produtosRepository.deleteById(id);
+    }
+
+    @PutMapping("/produto/{id}")
+    public Produto update(@PathVariable(value="id") long id, @RequestBody Produto produto){
+        produto.setId(id);
         return produtosRepository.save(produto);
     }
 
