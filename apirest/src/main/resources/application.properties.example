@@ -1,0 +1,7 @@
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+
+#Banco local - Produtos
+spring.datasource.url= jdbc:postgresql://localhost:5432/produtos
+spring.datasource.username= usuario
+spring.datasource.password= senha
+spring.jpa.hibernate.ddl-auto=update
